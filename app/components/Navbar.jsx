@@ -1,6 +1,6 @@
 "use client"
 
-import { MegaMenu } from 'primereact/megamenu';
+import { Menubar } from 'primereact/menubar';
 import { InputText } from 'primereact/inputtext';
 import Image from 'next/image';
 
@@ -11,17 +11,28 @@ export default function Navbar() {
         {
             label: 'User', icon: 'pi pi-fw pi-user',
             items: [
-
+                {
+                    label: 'Favorites',
+                    icon: 'pi pi-fw pi-star'
+                },
+                {
+                    label: 'Settings',
+                    icon: 'pi pi-fw pi-cog'
+                }
             ]
         }
-    ];
+    ]
+
 
     const start = <Image alt="scaryoke-logo" src={Logo} width="40" className="mr-2" />;
-    const end = <InputText placeholder="Search" type="text" />
-
+    const end = (
+        <span className="p-input-icon-left">
+            <i className="pi pi-search" />
+            <InputText placeholder="Search" />
+        </span>
+    );
+    
     return (
-        <div className="card">
-            <MegaMenu model={items} start={start} end={end} />
-        </div>
+        <Menubar model={items} start={start} end={end} />
     )
 } 
