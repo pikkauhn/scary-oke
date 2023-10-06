@@ -1,0 +1,19 @@
+.p-menubar {
+    width: 100
+}
+
+.p-menuitem {    
+    margin-left: 10px;
+}
+
+.hero {
+    height: 100%;
+    text-align: center;
+    padding: 5vh;
+}
+
+.features {
+    text-align: center;
+    padding: 40px;
+    background-color: blue;
+}

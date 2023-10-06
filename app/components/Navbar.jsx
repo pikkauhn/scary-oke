@@ -1,6 +1,6 @@
 "use client"
 
-import './navbar.css'
+import './components.css'
 import { Menubar } from 'primereact/menubar';
 import { InputText } from 'primereact/inputtext';
 
@@ -20,6 +20,11 @@ export default function Navbar() {
             label: 'Favorites',
             icon: 'pi pi-fw pi-star',
             url: 'Favorites'
+        },
+        {
+            label: 'Skaryoke',
+            icon: 'pi pi-fw pi-user',
+            url: 'Skaryoke'
         },
         {
             label: 'User', icon: 'pi pi-fw pi-user',
