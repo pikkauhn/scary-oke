@@ -14,7 +14,7 @@ export default function Hero() {
       <div>
       <h1 className={satisfy.className}>Unleash Your Inner Rockstar</h1>
       <p>Join us for the ultimate karaoke experience.</p>
-      <button>Get Started</button>
+      <a href="/Songs">Get Started</a>
       </div>
     </div>
   );

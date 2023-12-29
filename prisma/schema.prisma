@@ -1,0 +1,53 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:scaryoke.db"
+}
+
+// Table: Users
+model User {
+  id        Int         @id @unique
+  email     String      @default("")
+  password  String
+  firstname String
+  lastname  String
+  karafunid Karafun[]
+  favorites Favorites[]
+  isAdmin   Boolean     @default(false)
+}
+
+// Table: TimeOffRequest
+model Songs {
+  Id        Int        @id @unique
+  Title     String
+  Artist    String
+  Year      Int
+  Duo       Int
+  Explicit  Int
+  Date      String
+  Styles    String
+  Languages String
+  Favorites Favorites[]
+}
+
+model Karafun {
+  id     Int    @id @default(autoincrement())
+  userId Int
+  user   User   @relation(fields: [userId], references: [id])
+  kuser  String
+  kpass  String
+}
+
+model Favorites {
+  id     Int    @id @default(autoincrement())
+  User   User?  @relation(fields: [userId], references: [id])
+  userId Int?
+  Song   Songs? @relation(fields: [songId], references: [Id])
+  songId Int?
+}
